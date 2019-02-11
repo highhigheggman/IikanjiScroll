@@ -18,27 +18,39 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // keyboard Type
+        // tableView Setting
+        self.tableView.allowsSelection = false
+        self.tableView.separatorStyle = .none
+        
+        // keyboard Setting
         NameTextField.keyboardType = .asciiCapable
         AddressTextField.keyboardType = .asciiCapable
         PhoneTextField.keyboardType = .numberPad
         MailTextField.keyboardType = .emailAddress
-
+        
+        // notification
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification,
+                                               object: nil,
+                                               queue: nil) { notification in
+            print("show Key")
+        }
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification,
+                                               object: nil,
+                                               queue: nil) { notification in
+            print("hide Key")
+        }
+        
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-
+        
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         return 3
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        // deselect
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
 }

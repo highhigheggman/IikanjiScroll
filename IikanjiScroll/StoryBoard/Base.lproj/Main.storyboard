@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="lx8-e1-OWI" userLabel="Footer">
-                            <rect key="frame" x="0.0" y="510" width="375" height="264"/>
+                            <rect key="frame" x="0.0" y="960" width="375" height="264"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1oc-3u-uDB" userLabel="Veritical Stack">
@@ -62,12 +62,38 @@
                                             </constraints>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hnb-oe-nc3" userLabel="Dummy View2">
-                                            <rect key="frame" x="0.0" y="132" width="375" height="132"/>
+                                            <rect key="frame" x="0.0" y="132" width="375" height="26.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GP5-YR-sdG" userLabel="SendButton">
+                                            <rect key="frame" x="0.0" y="158.5" width="375" height="53"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bX-aL-IFd" userLabel="Dummy View1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="53"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNP-gT-KIW">
+                                                    <rect key="frame" x="94" y="0.0" width="187.5" height="53"/>
+                                                    <state key="normal" title="Send"/>
+                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHD-uY-CYq" userLabel="Dummy View2">
+                                                    <rect key="frame" x="281.5" y="0.0" width="93.5" height="53"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3bX-aL-IFd" firstAttribute="width" secondItem="GP5-YR-sdG" secondAttribute="width" multiplier="0.25" id="EJG-l5-HH2"/>
+                                                <constraint firstItem="bNP-gT-KIW" firstAttribute="width" secondItem="GP5-YR-sdG" secondAttribute="width" multiplier="0.5" id="jt3-bY-DBq"/>
+                                            </constraints>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jsm-VX-nxL" userLabel="Dummy View3">
+                                            <rect key="frame" x="0.0" y="211.5" width="375" height="52.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Ksn-a2-i8n" firstAttribute="height" secondItem="1oc-3u-uDB" secondAttribute="height" multiplier="0.1" id="crE-DX-Zqc" userLabel="Dummy View1.height = 0.05 × height"/>
+                                        <constraint firstItem="Hnb-oe-nc3" firstAttribute="height" secondItem="1oc-3u-uDB" secondAttribute="height" multiplier="0.1" id="NIT-3r-S8U"/>
+                                        <constraint firstItem="Ksn-a2-i8n" firstAttribute="height" secondItem="1oc-3u-uDB" secondAttribute="height" multiplier="0.1" id="crE-DX-Zqc"/>
                                         <constraint firstItem="yGL-jX-DT9" firstAttribute="height" secondItem="1oc-3u-uDB" secondAttribute="height" multiplier="0.2" id="jqb-C7-HNv"/>
                                         <constraint firstItem="4Ke-AH-lVr" firstAttribute="height" secondItem="1oc-3u-uDB" secondAttribute="height" multiplier="0.2" id="lFz-Pu-Mmx"/>
                                     </constraints>
@@ -84,8 +110,16 @@
                         <sections>
                             <tableViewSection id="7e2-wf-Oq1">
                                 <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="450" id="FOW-E3-EjG" userLabel="Test Cell">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FOW-E3-EjG" id="V5i-1i-zeK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="449.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="170" id="HA7-Ih-jt3" userLabel="Name Cell">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+                                        <rect key="frame" x="0.0" y="450" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HA7-Ih-jt3" id="fYW-em-egw">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
@@ -153,7 +187,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="170" id="J3L-pl-UYq" userLabel="Address Cell">
-                                        <rect key="frame" x="0.0" y="170" width="375" height="170"/>
+                                        <rect key="frame" x="0.0" y="620" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J3L-pl-UYq" id="w2f-BC-LUm">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
@@ -221,7 +255,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="170" id="hQz-ZU-tj5" userLabel="Phone Cell">
-                                        <rect key="frame" x="0.0" y="340" width="375" height="170"/>
+                                        <rect key="frame" x="0.0" y="790" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hQz-ZU-tj5" id="GnZ-jJ-drp">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
@@ -301,6 +335,7 @@
                         <outlet property="MailTextField" destination="Mme-TJ-oRu" id="B2F-03-gA0"/>
                         <outlet property="NameTextField" destination="6wx-y3-03h" id="E7C-9x-cRK"/>
                         <outlet property="PhoneTextField" destination="0Ey-6Z-DqP" id="QiF-5Q-iph"/>
+                        <outlet property="SendButton" destination="bNP-gT-KIW" id="cK6-Xt-x4t"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sZ-U6-OKa" userLabel="First Responder" sceneMemberID="firstResponder"/>

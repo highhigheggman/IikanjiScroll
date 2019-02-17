@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ReactiveSwift
+import ReactiveCocoa
 
 class TableViewController: UITableViewController {
     
@@ -14,32 +16,39 @@ class TableViewController: UITableViewController {
     @IBOutlet weak var AddressTextField: UITextField!
     @IBOutlet weak var PhoneTextField: UITextField!
     @IBOutlet weak var MailTextField: UITextField!
+    @IBOutlet weak var SendButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // tableView Setting
+        // TableView Setting
         self.tableView.allowsSelection = false
         self.tableView.separatorStyle = .none
         
-        // keyboard Setting
+        // Keyboard Setting
         NameTextField.keyboardType = .asciiCapable
         AddressTextField.keyboardType = .asciiCapable
         PhoneTextField.keyboardType = .numberPad
         MailTextField.keyboardType = .emailAddress
         
-        // notification
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification,
-                                               object: nil,
-                                               queue: nil) { notification in
-            print("show Key")
+        // Notification
+        addNotification()
+        
+        // Reactive
+        //  <Send Signal>
+        let mailTextSignal = MailTextField.reactive.continuousTextValues
+        
+        //  <Observe Signal>
+        let mailTextObserver = mailTextSignal.observeValues { text in
+            
+            guard let text = text else {
+                return
+            }
+            
+            print(text)
         }
         
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification,
-                                               object: nil,
-                                               queue: nil) { notification in
-            print("hide Key")
-        }
+        
         
     }
     
@@ -53,4 +62,21 @@ class TableViewController: UITableViewController {
         return 3
     }
     
+}
+
+extension TableViewController {
+    
+    fileprivate func addNotification() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { notification in
+            print("show Key")
+        }
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification,object: nil, queue: nil) { notification in
+            print("hide Key")
+        }
+    }
+    
+    fileprivate func removeNotification() {
+
+    }
 }

@@ -18,6 +18,8 @@ class TableViewController: UITableViewController {
     @IBOutlet weak var MailTextField: UITextField!
     @IBOutlet weak var SendButton: UIButton!
     
+    private var viewModel: TableViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,17 +40,8 @@ class TableViewController: UITableViewController {
         //  <Send Signal>
         let mailTextSignal = MailTextField.reactive.continuousTextValues
         
-        //  <Observe Signal>
-        let mailTextObserver = mailTextSignal.observeValues { text in
-            
-            guard let text = text else {
-                return
-            }
-            
-            print(text)
-        }
-        
-        
+        //  <Bind>
+        self.viewModel = TableViewModel(signal: mailTextSignal)
         
     }
     

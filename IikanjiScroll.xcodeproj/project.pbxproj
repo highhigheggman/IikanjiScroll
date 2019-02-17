@@ -14,8 +14,20 @@
 		6F1EDE37221065BC00D59D39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1EDE35221065BC00D59D39 /* LaunchScreen.storyboard */; };
 		6F1EDE462210CBF900D59D39 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1EDE452210CBF900D59D39 /* TableViewController.swift */; };
 		6F8A64422214FB4A00621C7E /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A64412214FB4A00621C7E /* TableViewModel.swift */; };
-		C6EFB357FE0F2889CD4934B7 /* Pods_IikanjiScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 256EE27F8FC356D2F59D032D /* Pods_IikanjiScroll.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6F4592F32219909A0004FDF1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		256EE27F8FC356D2F59D032D /* Pods_IikanjiScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IikanjiScroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +39,8 @@
 		6F1EDE36221065BC00D59D39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F1EDE38221065BC00D59D39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F1EDE452210CBF900D59D39 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		6F4592E422198A680004FDF1 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F4592F4221990C40004FDF1 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "../../Library/Developer/Xcode/DerivedData/IikanjiScroll-fhpesvpodyfgigcliyqiacdjbjce/Build/Products/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
 		6F8A64412214FB4A00621C7E /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		C89C03CEFCDFFD9C43506E0A /* Pods-IikanjiScroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IikanjiScroll.release.xcconfig"; path = "Pods/Target Support Files/Pods-IikanjiScroll/Pods-IikanjiScroll.release.xcconfig"; sourceTree = "<group>"; };
 		E75501E41FDF413CFB6E1C71 /* Pods-IikanjiScroll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IikanjiScroll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IikanjiScroll/Pods-IikanjiScroll.debug.xcconfig"; sourceTree = "<group>"; };
@@ -37,7 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6EFB357FE0F2889CD4934B7 /* Pods_IikanjiScroll.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +125,8 @@
 		8EBB7BEE527C43450E856377 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6F4592F4221990C40004FDF1 /* Result.framework */,
+				6F4592E422198A680004FDF1 /* ReactiveCocoa.framework */,
 				256EE27F8FC356D2F59D032D /* Pods_IikanjiScroll.framework */,
 			);
 			name = Frameworks;
@@ -138,6 +153,7 @@
 				6F1EDE23221065B900D59D39 /* Frameworks */,
 				6F1EDE24221065B900D59D39 /* Resources */,
 				6B0B897A7013868B749C3DFC /* [CP] Embed Pods Frameworks */,
+				6F4592F32219909A0004FDF1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

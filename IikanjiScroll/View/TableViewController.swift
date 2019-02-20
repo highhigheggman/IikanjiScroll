@@ -60,12 +60,13 @@ class TableViewController: UITableViewController {
 extension TableViewController {
     
     fileprivate func addNotification() {
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { notification in
+        
+        NotificationCenter.default.reactive.notifications(forName: UIResponder.keyboardWillShowNotification).observe { _ in
             print("show Key")
         }
         
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification,object: nil, queue: nil) { notification in
-            print("hide Key")
+        NotificationCenter.default.reactive.notifications(forName: UIResponder.keyboardWillHideNotification).observe { _ in
+            print("hide key")
         }
     }
     
